@@ -69,40 +69,9 @@ inquirer
     ])
     .then((response) => {
         console.log(response)
-        let userInfo = 
-    `# ${response.title}
-
-    ##  Description
-    ${response.description}
-    
-    ##  Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    
-    ##  Installation
-    ${response.installation}
-    
-    ##  Usage
-    ${response.usage}
-    
-    ##  License
-    ${response.license}
-    
-    ##  Contributing
-    ${response.contributing}
-    
-    ##  Tests
-    ${response.tests}
-    
-    ##  Questions
-    ${response.questions}`
-
-          fs.appendFile("README.md", userInfo, (err) =>
+          fs.appendFile("README.md", generateMarkdown(process.argv[2]), (err) =>
             err ? console.error(err) : console.log("Success!")
           )
+        //   renderLicenseBadge(response.license)
       }
     )

@@ -12,19 +12,28 @@ function writeToFile(fileName, data) {
     err ? console.error(err) : console.log("Success!")
 )}
 
-
 // TODO: Create a function to initialize app
 function init() {
     inquirer
     .prompt([
         {
             type: "input",
-            message: "What is the title of your repository?",
+            message: "What is your GitHub username?",
+            name: "username" // add this to questions section
+        },
+        {
+            type: "input",
+            message: "What is your email?", // add this to questions section
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is your project's name?",
             name: "title"
         },
         {
             type: "input",
-            message: "Please type out a description of your application.",
+            message: "Please write a short description of your project.",
             name: "description"
         },
         {
@@ -34,9 +43,9 @@ function init() {
         },
         {
             type: "list",
-            message: "Which license did you use for your repository? If your license is not on the list, please select other.",
+            message: "What kind of license should your project have?",
             name: "license",
-            choices: ["Apache License 2.0", "GNU GPLv3", "MIT License", "ISC License", "none"]
+            choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3", "None"]
         },
         {
             type: "input",
@@ -47,16 +56,6 @@ function init() {
             type: "input",
             message: "Please explain any tests and how to use them.",
             name: "tests"
-        },
-        {
-            type: "input",
-            message: "What is your GitHub username?",
-            name: "username" // add this to questions section
-        },
-        {
-            type: "input",
-            message: "What is your email?", // add this to questions section
-            name: "email"
         },
         {
             type: "input",

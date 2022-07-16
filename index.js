@@ -8,17 +8,14 @@ const generateMarkdown = require("./utils/generateMarkdown")
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    
-}
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log("Success!")
+)}
+
 
 // TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-
-
-inquirer
+function init() {
+    inquirer
     .prompt([
         {
             type: "input",
@@ -39,7 +36,7 @@ inquirer
             type: "list",
             message: "Which license did you use for your repository? If your license is not on the list, please select other.",
             name: "license",
-            choices: ["Apache License 2.0", "GNU GPLv3", "MIT License", "ISC License"]
+            choices: ["Apache License 2.0", "GNU GPLv3", "MIT License", "ISC License", "none"]
         },
         {
             type: "input",
@@ -69,9 +66,12 @@ inquirer
     ])
     .then((response) => {
         console.log(response)
-          fs.appendFile("README.md", generateMarkdown(process.argv[2]), (err) =>
-            err ? console.error(err) : console.log("Success!")
-          )
-        //   renderLicenseBadge(response.license)
+         writeToFile("README.md", generateMarkdown(response));
       }
     )
+}
+
+// Function call to initialize app
+init();
+
+

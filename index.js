@@ -38,6 +38,11 @@ function init() {
         },
         {
             type: "input",
+            message: "What are the steps required to install your project?",
+            name: "installation"
+        },
+        {
+            type: "input",
             message: "Provide your instructions and examples for usage.",
             name: "usage"
         },
@@ -45,23 +50,18 @@ function init() {
             type: "list",
             message: "What kind of license should your project have?",
             name: "license",
-            choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3", "None"]
+            choices: ["MIT License", "Apache 2.0 License", "GPL 3.0 License", "BSD 3 License", "None"]
         },
         {
             type: "input",
             message: "Please add any contributors to your project.",
-            name: "contributors"
+            name: "credits"
         },
         {
             type: "input",
             message: "Please explain any tests and how to use them.",
             name: "tests"
         },
-        {
-            type: "input",
-            message: "What is the deployed link to your application?",
-            name: "link" // add this to questions section
-        }
     ])
     .then((response) => {
         console.log(response)

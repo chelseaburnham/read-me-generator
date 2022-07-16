@@ -35,14 +35,14 @@ function generateMarkdown(response) {
   ##  License
   This project is licensed under the ${response.license}.
   
-  ##  Contributing
-  ${response.contributing}
+  ##  Credits
+  ${response.credits}
   
   ##  Tests
   ${response.tests}
   
   ##  Questions
-  If you have any questions about the repo, feel free to email me at ${response.email}. You can find more of my work at [github.com/${username}].`;
+  If you have any questions about the repo, feel free to email me at ${response.email}. You can find more of my work at [http://github.com/${response.username}].`;
 }
 
 module.exports = generateMarkdown;

@@ -53,7 +53,7 @@ function generateMarkdown(response) {
   ${response.tests}
   
   ##  Questions
-  ${response.questions}`;
+  If you have any questions about the repo, feel free to email me at ${response.email}. You can find more of my work at [github.com/${username}].`;
 }
 
 module.exports = generateMarkdown;

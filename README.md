@@ -1,20 +1,22 @@
-# ${title}
+# Title
 
 ##  Description
-${description}
 
-[Deployable Link](${deployedLink})
+##  Table of Contents
+(should have links to each section that takes the user to the corresponding sections of the read me)
 
 ##  Installation
-${installation}
 
 ##  Usage
-${usage}
-<br>
-![Example1](${gif})
-
-##  Credits
-[${creditsName}](${creditsLink})
 
 ##  License
-[${licenseName}](${licenseLink})
+(should be given a list of options that adds a badge to the top of the readme and then adds it to this section as well)
+
+##  Contributing
+
+##  Tests
+
+##  Questions
+(should ask the user for their username and have it added here)
+(should ask for email and have it added here and how to reach the user with any additional questions)
+

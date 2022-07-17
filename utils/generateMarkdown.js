@@ -1,26 +1,33 @@
 // Function that returns a license badge based on which license is passed in
 // If there is no license, returns an empty string
 function renderLicenseBadge(license) {
-// badges: 
-// MIT - [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-// Apache 2.0 - [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-// GPL 3.0 - [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-// BSD 3 - [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-
-
+  if(license !== "None"){
+    return `![License](https://img.shields.io/badge/License-${license}-blue.svg)`
+  } return "";
 }
 
 // Function that returns the license link
-// If there is no license, returns an empty string
-function renderLicenseLink(license) {}
+// // If there is no license, returns an empty string
+// function renderLicenseLink(license) {
+//   if(license === "none") {
+//     return "";
+//   }
+// }
 
 // Function that returns the license section of README
 // If there is no license, returns an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license !== "None") {
+    return `## License
+    This is licensed under the ${license} license.`
+  } return "";
+}
 
 // Function to generate markdown for README
 function generateMarkdown(response) {
   return `  
+${renderLicenseBadge(response.license)}
+
   # ${response.title}
 
   ##  Description
@@ -40,8 +47,8 @@ function generateMarkdown(response) {
   ##  Usage
   ${response.usage}
   
-  ##  License
-  This project is licensed under the ${response.license}.
+  ${renderLicenseSection(response.license)}
+  ${response.license}
   
   ##  Credits
   ${response.credits}

@@ -1,65 +1,65 @@
-//variables to initiate packages
+// Variables to initiate packages
 const fs = require("fs")
 const inquirer = require("inquirer")
 const generateMarkdown = require("./utils/generateMarkdown")
 
-// TODO: Create an array of questions for user input
-// const questions = [];
+// Array of questions for user input
+const questions = ["What is your GitHub username?", "What is your email?", "What is your project's name?", "Please write a short description of your project.", "What are the steps required to install your project?", "Provide your instructions and examples for usage.", "What kind of license should your project have?", "Please add any contributors to your project.", "Please explain any tests and how to use them."];
 
-// TODO: Create a function to write README file
+// Function to writes README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
     err ? console.error(err) : console.log("Success!")
 )}
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inquirer
     .prompt([
         {
             type: "input",
-            message: "What is your GitHub username?",
-            name: "username" // add this to questions section
+            message: questions[0],
+            name: "username"
         },
         {
             type: "input",
-            message: "What is your email?", // add this to questions section
+            message: questions[1],
             name: "email"
         },
         {
             type: "input",
-            message: "What is your project's name?",
+            message: questions[2],
             name: "title"
         },
         {
             type: "input",
-            message: "Please write a short description of your project.",
+            message: questions[3],
             name: "description"
         },
         {
             type: "input",
-            message: "What are the steps required to install your project?",
+            message: questions[4],
             name: "installation"
         },
         {
             type: "input",
-            message: "Provide your instructions and examples for usage.",
+            message: questions[5],
             name: "usage"
         },
         {
             type: "list",
-            message: "What kind of license should your project have?",
+            message: questions[6],
             name: "license",
             choices: ["MIT License", "Apache 2.0 License", "GPL 3.0 License", "BSD 3 License", "None"]
         },
         {
             type: "input",
-            message: "Please add any contributors to your project.",
+            message: questions[7],
             name: "credits"
         },
         {
             type: "input",
-            message: "Please explain any tests and how to use them.",
+            message: questions[8],
             name: "tests"
         },
     ])

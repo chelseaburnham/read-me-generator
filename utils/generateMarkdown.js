@@ -6,6 +6,14 @@ function renderLicenseBadge(license) {
   } return "";
 }
 
+// Function that returns the license section in Table of Contentes of README
+// If there is no license, returns an empty string
+function renderLicenseTableofContents(license) {
+  if (license !== "None") {
+    return `* [License](#license)`
+  } return "";
+}
+
 // Function that returns the license section of README
 // If there is no license, returns an empty string
 function renderLicenseSection(license) {
@@ -28,7 +36,7 @@ ${renderLicenseBadge(response.license)}
   ##  Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  * [License](#license)
+  ${renderLicenseTableofContents(response.license)}
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
@@ -40,7 +48,6 @@ ${renderLicenseBadge(response.license)}
   ${response.usage}
   
   ${renderLicenseSection(response.license)}
-  ${response.license}
   
   ##  Contributing
   ${response.contributing}

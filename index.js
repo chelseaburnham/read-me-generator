@@ -55,7 +55,7 @@ function init() {
         {
             type: "input",
             message: questions[7],
-            name: "credits"
+            name: "contributing"
         },
         {
             type: "input",

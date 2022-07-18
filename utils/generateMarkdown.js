@@ -50,8 +50,8 @@ ${renderLicenseBadge(response.license)}
   ${renderLicenseSection(response.license)}
   ${response.license}
   
-  ##  Credits
-  ${response.credits}
+  ##  Contributing
+  ${response.contributing}
   
   ##  Tests
   ${response.tests}

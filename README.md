@@ -5,8 +5,6 @@
 
   ##  Description
   This application generates a README.md using Node.js. In fact, what you are reading now was generated using this application. I filled out the information then went back and added a few more details including a video walkthrough of how to use this.
-
-  [Deployable Link](https://chelseaburnham.github.io/password-generator/)
   
   ##  Table of Contents
   * [Installation](#installation)
